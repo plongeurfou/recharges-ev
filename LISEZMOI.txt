@@ -1,0 +1,30 @@
+RECHARGES EV — V2.1
+====================
+
+NOUVEAUTÉS DE LA V2.1
+- Détection des mises à jour depuis un dépôt GitHub public (fichier signé), avec affichage des nouveautés.
+- Mise à jour de la base de données automatique à la copie des nouveaux fichiers.
+- Page « Mises à jour » et page « Diagnostic ».
+- Assistant de première configuration protégé par un code d'installation.
+- Outils pour le mainteneur : génération des clés de signature, publication d'une version.
+
+INSTALLATION NEUVE
+1. Créez une base MySQL/MariaDB et un utilisateur (panneau de l'hébergeur).
+2. Copiez le dossier recharges-ev/ par FTP.
+3. Créez par FTP le fichier recharges-ev/inc/code_installation.txt contenant un code de votre choix (8 caractères minimum).
+4. Ouvrez l'adresse du site : l'assistant vous demande le code, puis la base, le budget, les tarifs, le mot de passe.
+5. Le fichier code_installation.txt est supprimé automatiquement à la fin (sinon supprimez-le vous-même).
+6. Ouvrez la page Diagnostic pour vérifier l'installation.
+
+MISE À JOUR D'UNE V2 EXISTANTE
+Copiez les fichiers de recharges-ev/ par FTP en écrasant les anciens. NE SUPPRIMEZ PAS inc/local.php.
+Rien d'autre à faire : la base se met à jour toute seule, un bandeau affiche les nouveautés (bouton « Compris »).
+
+SÉCURITÉ
+- Le fichier inc/local.php contient le mot de passe de la base : ne le partagez jamais.
+- Les mises à jour ne s'installent jamais toutes seules : vous téléchargez et copiez vous-même.
+- Le fichier de version est signé ; sans la clé privée du mainteneur, une fausse mise à jour est rejetée.
+
+LIMITE CONNUE
+Si une migration de base échoue, l'application affiche une erreur plutôt que de tourner sur une base à moitié migrée.
+Activez temporairement « debug » dans Paramètres pour voir le message.
