@@ -1,0 +1,2 @@
+   # Aucun accès direct aux fichiers de configuration et de logique.
+   Require all denied
