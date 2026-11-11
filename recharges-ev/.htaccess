@@ -1,0 +1,6 @@
+   Options -Indexes
+   DirectoryIndex index.php
+
+   <IfModule mod_mime.c>
+     AddType application/manifest+json .webmanifest
+   </IfModule>
